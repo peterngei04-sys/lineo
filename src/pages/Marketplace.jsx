@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/marketplace.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { API_URL } from "../config";
 function Marketplace() {
   const [products, setProducts] = useState([]);
   const [loadingProduct, setLoadingProduct] = useState(null);
@@ -47,9 +47,8 @@ function Marketplace() {
     try {
       const paymentChecks = productsList.map(async (product) => {
         try {
-          const res = await fetch(
-            `http://localhost:5000/check-payment?user_email=${encodeURIComponent(user.email)}&product_id=${encodeURIComponent(product.id)}`
-          );
+          const res = await fetch(`${API_URL}/check-payment?user_email=${encodeURIComponent(email)}&product_id=${encodeURIComponent(p.id)}`)
+                            
           const result = await res.json();
           return result.hasPaid ? product.id : null;
         } catch (e) { 
@@ -98,10 +97,9 @@ function Marketplace() {
       localStorage.setItem("product_id", product.id);
       localStorage.setItem("amount", product.price);
       localStorage.setItem("user_email", user.email);
-      localStorage.setItem("just_paid", "true"); 
-
-      const res = await fetch("http://localhost:5000/paypal/create-order", {
-        method: "POST",
+                      localStorage.setItem("just_paid", "true"); 
+      const res = await fetch(`${API_URL}/paypal/create-order`, {
+        method: "POST",                                                                                           
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: product.price }),
       });

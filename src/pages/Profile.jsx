@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase";
 import "../styles/profile.css";
-
+import { API_URL } from "../config";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -55,8 +55,8 @@ function Profile() {
       for (const p of products) {
         try {
           const res  = await fetch(
-            `http://localhost:5000/check-payment?user_email=${encodeURIComponent(email)}&product_id=${encodeURIComponent(p.id)}`
-          );
+            `${API_URL}/check-payment?user_email=${encodeURIComponent(email)}&product_id=${encodeURIComponent(p.id)}`
+          );                      
           if (!res.ok) continue;
           const d = await res.json();
           if (d.hasPaid) paid.push(p);

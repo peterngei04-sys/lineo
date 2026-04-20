@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/success.css";
-
+import { API_URL } from "../config";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -51,8 +51,8 @@ function Success() {
       }
 
       setOrderID(token);
-
-      const res = await fetch("http://localhost:5000/paypal/capture-order", {
+                                                    
+      const res = await fetch("${API_URL}/paypal/capture-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
