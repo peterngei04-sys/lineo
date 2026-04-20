@@ -1,0 +1,193 @@
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+
+/* ===== SHARED PAGE SHELL ===== */
+.inner-page {
+  min-height: 100vh;
+  background: #f0effe;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ===== TOPBAR ===== */
+.inner-topbar {
+  background: rgba(240,239,254,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(180,170,245,0.3);
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.inner-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1.5px solid #e2dff7;
+  border-radius: 50px;
+  padding: 7px 14px 7px 11px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1535;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 1px 4px rgba(91,79,245,0.06);
+  flex-shrink: 0;
+}
+.inner-back-btn:hover {
+  border-color: #5b4ff5;
+  background: #ede9ff;
+  color: #5b4ff5;
+  box-shadow: none;
+  transform: none;
+}
+.inner-back-btn svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.5; stroke-linecap: round;
+}
+
+.inner-topbar-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1535;
+  letter-spacing: -0.02em;
+}
+
+/* ===== CONTENT WRAPPER ===== */
+.inner-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px 72px;
+}
+
+.inner-content-wide {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 72px;
+}
+
+/* ===== SECTION CARD ===== */
+.inner-card {
+  background: #fff;
+  border: 1px solid #e2dff7;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(91,79,245,0.05);
+  animation: innerFadeUp 0.4s ease both;
+}
+
+.inner-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid #eeedfb;
+}
+.inner-card-head h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1535;
+}
+.inner-card-head span {
+  font-size: 12px;
+  color: #a09cba;
+}
+
+.inner-card-body {
+  padding: 22px 24px;
+}
+
+/* ===== HERO STRIP ===== */
+.inner-hero {
+  background: linear-gradient(130deg, #4a3fd4 0%, #6b5ff5 50%, #8b7ff8 100%);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  animation: innerFadeUp 0.4s ease both;
+}
+.inner-hero::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 220px; height: 220px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.inner-hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 5px;
+  position: relative; z-index: 1;
+}
+.inner-hero p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  position: relative; z-index: 1;
+}
+
+/* ===== PROSE (terms/privacy) ===== */
+.prose-body {
+  padding: 28px 32px;
+  font-size: 14px;
+  color: #4a4560;
+  line-height: 1.8;
+}
+.prose-body h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1535;
+  margin: 28px 0 10px;
+  letter-spacing: -0.01em;
+}
+.prose-body h2:first-child { margin-top: 0; }
+.prose-body p  { margin-bottom: 12px; }
+.prose-body ul { padding-left: 20px; margin-bottom: 12px; }
+.prose-body ul li { margin-bottom: 6px; }
+.prose-body a  { color: #5b4ff5; }
+.prose-body strong { color: #1a1535; font-weight: 700; }
+
+.prose-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ede9ff;
+  color: #5b4ff5;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes innerFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .inner-topbar  { padding: 0 16px; }
+  .inner-content { padding: 20px 16px 48px; }
+  .prose-body    { padding: 20px 18px; }
+  .inner-hero    { padding: 22px 20px; }
+}
+

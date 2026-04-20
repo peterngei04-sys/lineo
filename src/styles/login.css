@@ -1,0 +1,64 @@
+/* PAGE LAYOUT */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+/* AUTH CARD */
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* HEADINGS */
+.auth-box h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* FORM GROUP */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+}
+
+/* SWITCH TEXT */
+.switch-text {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch-text span {
+  color: #38bdf8;
+  cursor: pointer;
+}
+/* Toast customization */
+.Toastify__toast {
+  border-radius: 10px;
+  font-size: 14px;
+}
